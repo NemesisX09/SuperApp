@@ -7,6 +7,7 @@
   </head>
   <body>
     <canvas id="canvas"></canvas>
+    <script src="/socket.io/socket.io.js"></script>
     <script>
       var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
@@ -34,6 +35,9 @@ document.addEventListener('mousedown', function (e) {
 document.addEventListener('keydown', function (e) {
   generate();
 });
+
+      var socket = io();
+      socket.emit('send', {public: true, message: 'Hello World!'});
     </script>
   </body>
 </html>
