@@ -24,3 +24,6 @@ document.addEventListener('mousedown', function (e) {
 document.addEventListener('keydown', function (e) {
   generate();
 });
+
+      var socket = io();
+      socket.emit('send', {public: true, message: 'Hello World!'});
